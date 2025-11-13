@@ -1,0 +1,26 @@
+//6.	Sacar el promedio de cada tres valores consecutivos en un vector. P1= A1 + A2 + A3 P2= A2 + A3 + A4 P3= A3 + A4 + A5 hacerlo con vectores
+#include <iostream>
+#include <vector>
+using namespace std;
+int main() {
+    vector<float> valores;
+    float v;
+    cout << "Ingrese valores (0 para terminar):" << endl;
+    while (cin >> v && v != 0.0f) {
+        valores.push_back(v);
+    }
+
+    vector<float> promedios;
+    for (size_t i = 0; i + 2 < valores.size(); ++i) {
+        float promedio = (valores[i] + valores[i + 1] + valores[i + 2]) / 3.0f;
+        promedios.push_back(promedio);
+    }
+
+    cout << "Promedios de cada tres valores consecutivos:" << endl;
+    for (float p : promedios) {
+        cout << p << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
