@@ -1,0 +1,28 @@
+//Generar los primeros n números de Fibonacci en un vector. con vectores y funciones 
+#include <iostream>
+#include <vector>
+using namespace std;
+void generarFibonacci(int n, vector<int>& fib) {
+    fib.resize(n);
+    if (n >= 1) fib[0] = 0;
+    if (n >= 2) fib[1] = 1;
+    for (int i = 2; i < n; ++i) {
+        fib[i] = fib[i - 1] + fib[i - 2];
+    }
+}
+int main() {
+    int n;
+    cout << "Ingrese la cantidad de números de Fibonacci a generar: ";
+    cin >> n;
+
+    vector<int> fibonacci;
+    generarFibonacci(n, fibonacci);
+
+    cout << "Los primeros " << n << " números de Fibonacci son: ";
+    for (int num : fibonacci) {
+        cout << num << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
