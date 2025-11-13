@@ -1,0 +1,35 @@
+//4.	Hacer un programa para revertir la lista de valores de un vector, en otro vector, es decir se debe mantener el vector original. con vectores
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Ingrese la cantidad de vectores: ";
+    cin >> n;
+
+    vector<int> original(n);
+    cout << "Ingrese los valores del vector:" << endl;
+    for (int i = 0; i < n; i++) {
+        cin >> original[i];
+    }
+
+    vector<int> reversed(n);
+    for (int i = 0; i < n; i++) {
+        reversed[i] = original[n - 1 - i];
+    }
+
+    cout << "Vector original: ";
+    for (int val : original) {
+        cout << val << " ";
+    }
+    cout << endl;
+
+    cout << "Vector revertido: ";
+    for (int val : reversed) {
+        cout << val << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
