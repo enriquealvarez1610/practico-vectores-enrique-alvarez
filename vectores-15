@@ -1,0 +1,32 @@
+//Un vector tiene la lista de alumnos y otro vector tiene las notas. Hacer un programa para obtener las tres mejores notas. Sugerencia: Clasificar el vector en orden descendente y luego listar los tres primeros, hay que tener cuidado cuando se intercambia los elementos del vector de alumnos también se debe intercambiar las notas. con vectores y fuciones
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+int main() {
+    int n;
+    cout << "Ingrese la cantidad de alumnos: ";
+    cin >> n;
+    vector<string> alumnos(n);
+    vector<float> notas(n);
+    for (int i = 0; i < n; i++) {
+        cout << "Ingrese el nombre del alumno " << i + 1 << ": ";
+        cin >> alumnos[i];
+        cout << "Ingrese la nota del alumno " << i + 1 << ": ";
+        cin >> notas[i];
+    }   
+    // Clasificar en orden descendente
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (notas[i] < notas[j]) {
+                swap(notas[i], notas[j]);
+                swap(alumnos[i], alumnos[j]);
+            }
+        }
+    }
+    cout << "Las tres mejores notas son:" << endl;  
+    for (int i = 0; i < 3 && i < n; i++) {
+        cout << alumnos[i] << ": " << notas[i] << endl;
+    }
+    return 0;
+}
