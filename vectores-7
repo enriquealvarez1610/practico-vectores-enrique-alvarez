@@ -1,0 +1,25 @@
+//7.	Dado un número entero, el programa debe devolver el valor escrito literalmente. Por ejemplo si se da 12 debe devolver 'DOCE'. Hacer esto hasta el valor 20.. con vectores 
+#include <iostream>
+#include <vector>
+using namespace std;
+int main() {
+    int numero;
+    cout << "Ingrese un número entero entre 0 y 20: ";
+    cin >> numero;
+
+    vector<string> numerosTexto = {
+        "CERO", "UNO", "DOS", "TRES", "CUATRO",
+        "CINCO", "SEIS", "SIETE", "OCHO", "NUEVE",
+        "DIEZ", "ONCE", "DOCE", "TRECE", "CATORCE",
+        "QUINCE", "DIECISÉIS", "DIECISIETE", "DIECIOCHO", "DIECINUEVE",
+        "VEINTE"
+    };
+
+    if (numero >= 0 && numero <= 20) {
+        cout << "El número es: " << numerosTexto[numero] << endl;
+    } else {
+        cout << "Número fuera de rango." << endl;
+    }
+
+    return 0;
+}
